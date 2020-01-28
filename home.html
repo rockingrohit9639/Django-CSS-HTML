@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+<style>
+body 
+
+{
+  background-color: midnightblue;
+}
+
+.header {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 40px;
+}
+
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+h1,h2,p {
+  color: navajowhite;
+  margin-left: 40px;
+} 
+ 
+p {
+	float: left;
+	width: 80%;
+	height: 190%;
+	padding: 20px;
+
+
+}
+h1,h2 {
+	float: left;
+	width: 90%;
+	height: 190%;
+	padding: 20px;
+}
+</style>
+</head>
+
+{% block content %}
+<h1>These images are my own and show some of the borders used in html</h1>
+	<img src="https://scontent-lhr3-1.cdninstagram.com/vp/fcd6383112af98c5125d5f137ac71df8/5D8480F5/t51.2885-15/e35/s1080x1080/59618052_308773790019673_8553938424124364847_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&ig_cache_key=MjA0MjQ2OTM5MDU3Nzk1MzQ4OA%3D%3D.2" alt="theshore" border="1" style="width:300px;height:300px;">
+	<img src="https://scontent-lhr3-1.cdninstagram.com/vp/2f8aee90c0eb0d2c69096902992ea672/5D90F080/t51.2885-15/e35/41470916_177240276486225_1898966013527053046_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=7&ig_cache_key=MTg3Nzg1ODAzNTA2NDE4MjU2OQ%3D%3D.2" alt="theshore" border="3" style="width:300px;height:300px;"> 
+	<img src="https://scontent-lhr3-1.cdninstagram.com/vp/19a3a9f33dfd961953f64eee9197ff5c/5D78E7F5/t51.2885-15/e35/39986966_2150949994980514_2741170032363962368_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=7&ig_cache_key=MTg2MDE0NTM2MDM0Nzg0NTAwNQ%3D%3D.2" alt="the shore" border="5" style="width:300px;height:300px;">
+
+<h2>Here is a google button</h2>
+<form action="http://google.com">
+    <input type="submit" value="Go to Google" />
+</form>
+
+<div>&nbsp</div>
+
+<h1 style="font-size:60px;"luminari;">Heading</h1>
+
+<h2 style="font-size:50px;"luminari;">Sub heading</h2> 
+
+<p style="font-size:25px;"luminari;">insert paragraph here.</p> 
+ 
+ 
+<h3>{{ title }}</h3>
+{{ my_number }},
+{{ my_list }}
+</p>
+
+<p>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+
+<ul>
+{% for abc in my_list %}
+	{% if abc == 1342 %}
+		<li>{{ forloop.counter }} - {{ abc|add:22 }}</li>
+	{% elif abc == "Abc" %}
+		<li>This is not the right answer</li>
+	{% else %}	
+		<li>{{ forloop.counter }} - {{ abc }}</li>
+	{% endif %}
+	
+	
+{% endfor %}
+</ul>
+</p>
+{% endblock %}
