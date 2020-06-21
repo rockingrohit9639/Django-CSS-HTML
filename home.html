@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+<style>
+body 
+
+{
+  background-color: MediumSeaGreen;
+}
+
+.header {
+  background-color: #0A1035;
+  text-align: center;
+  padding: 40px;
+}
+
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #0A1035;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: MediumSeaGreen;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: MediumSeaGreen;
+  color: black;
+}
+
+h1,h2,p {
+  color: #0A1035;
+  margin-left: 40px;
+} 
+ 
+p {
+	float: left;
+	width: 80%;
+	height: 190%;
+	padding: 20px;
+
+
+}
+h1,h2 {
+	float: left;
+	width: 90%;
+	height: 190%;
+	padding: 20px;
+}
+</style>
+</head>
+
+{% block content %}
+<h1>These images are my own and show some of the borders used in html</h1>
+<div>
+	<img src="https://www.instagram.com/p/B31xLaUgUXa/?utm_source=ig_web_copy_link"width="500" height="600">
+	<img src="https://www.instagram.com/p/B03-2SngQTc/?utm_source=ig_web_copy_link"width="500" height="600">
+</div>
+
+<h2>Here is a google button</h2>
+<form action="http://google.com">
+    <input type="submit" value="Go to Google" />
+</form>
+
+<div>&nbsp</div>
+
+<h1 style="font-size:60px;"luminari;">Heading</h1>
+
+<h2 style="font-size:50px;"luminari;">Sub heading</h2> 
+
+<p style="font-size:25px;"luminari;">insert paragraph here.</p> 
+ 
+ 
+<h3>{{ title }}</h3>
+{{ my_number }},
+{{ my_list }}
+</p>
+
+<p>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+
+<ul>
+{% for abc in my_list %}
+	{% if abc == 1342 %}
+		<li>{{ forloop.counter }} - {{ abc|add:22 }}</li>
+	{% elif abc == "Abc" %}
+		<li>This is not the right answer</li>
+	{% else %}	
+		<li>{{ forloop.counter }} - {{ abc }}</li>
+	{% endif %}
+	
+	
+{% endfor %}
+</ul>
+</p>
+{% endblock %}

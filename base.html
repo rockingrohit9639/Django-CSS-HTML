@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<style>
+body {
+  background-color: MediumSeaGreen;
+}
+
+h1,h2,h3 {
+  color: #0A1035;
+  margin-left: 40px;
+} 
+ 
+img {
+	float: center;
+	width: 100%;
+	height: 100px;
+	padding: 30px;
+} 
+
+</style>
+</head>
+<html>
+{% block content %}
+
+<head>
+     <title>Cassandra's site</title>
+</head>
+<body>
+	<nav>
+    <ul>
+        <li>Brand</li>
+        <li>Contact</li>
+        <li>About</li>
+    </ul>
+</nav> 
+
+	{% include 'navbar.html' %}
+
+	
+	replace me
+	{% endblock %}
+</body>
+
+</html>
