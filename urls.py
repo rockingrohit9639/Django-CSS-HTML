@@ -1,18 +1,18 @@
 from django.urls import path
 from .views import (
-	ChallengesListView,
-	ChallengesDetailView,
-	ChallengesCreateView,
-	ChallengesUpdateView,
-	ChallengesDeleteView
+	ArticleListView,
+	ArticleDetailView,
+	ArticleCreateView,
+	ArticleUpdateView,
+	ArticleDeleteView
 )
 
-app_name = 'challenges'
+app_name = 'articles'
 urlpatterns = [
-	path('', ChallengesListView.as_view(), name='challenges-list'),
-	path('<int:id>/', ChallengesDetailView.as_view(), name='challenges-detail'),
-	path('create/', ChallengesCreateView.as_view(), name='challenges_create'),
-	path('<int:id>/update/', ChallengesUpdateView.as_view(), name='challenges-update'),
-	path('<int:id>/delete/', ChallengesDeleteView.as_view(), name='challenges-delete'),
+	path('', ArticleListView.as_view(), name='article-list'),
+	path('<int:id>/', ArticleDetailView.as_view(), name='article-detail'),
+	path('create/', ArticleCreateView.as_view(), name='article_create'),
+	path('<int:id>/update/', ArticleUpdateView.as_view(), name='article-update'),
+	path('<int:id>/delete/', ArticleDeleteView.as_view(), name='article-delete'),
 
 ]

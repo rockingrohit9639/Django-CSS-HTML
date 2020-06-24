@@ -1,10 +1,10 @@
 from django import forms
 
-from .models import Challenges
+from .models import Article
 
-class ChallengesModelForm(forms.ModelForm):
+class ArticleModelForm(forms.ModelForm):
 	class Meta:
-		model = Challenges
+		model = Article
 		fields = [
 			'title',
 			'content',
