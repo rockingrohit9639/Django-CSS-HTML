@@ -2,10 +2,14 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-class Article(models.Model):
-	title		= models.TextField()
-	content 	= models.TextField()
-	active		= models.TextField()
-
+class Product(models.Model):
+	title		= models.CharField(max_length=120)
+	description = models.TextField(blank=True, null=True)
+	price		= models.DecimalField(decimal_places=2, max_digits=10)
+	summary		= models.TextField()
+	date		= models.DateField(null=True)
+	contact		= models.EmailField(max_length=254)
+	featured	= models.NullBooleanField()
+	
 	def get_absolute_url(self):
-		return reverse("articles:article-detail", kwargs={"id": self.id})
+		return reverse("products:product-detail", kwargs={"id": self.id})
