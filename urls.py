@@ -1,21 +1,18 @@
 from django.urls import path
-from products.views import ( 
-product_detail_view, 
-product_create_view, 
-product_list_view, 
-dynamic_lookup_view, 
-product_delete_view, 
-product_update_view,
+from .views import (
+	ArticleListView,
+	ArticleDetailView,
+	ArticleCreateView,
+	ArticleUpdateView,
+	ArticleDeleteView
 )
 
-app_name = 'products'
+app_name = 'articles'
 urlpatterns = [
-	path('<int:id>/', product_detail_view, name='product-detail'),
-    path('create/', product_create_view, name='product-list'),
-    path('<int:id>/delete/', product_delete_view, name='product-delete'), 
-    path('', product_list_view, name='product-list'),
-    path('<int:id>/', dynamic_lookup_view, name='product-detail'),
-    path('<int:id>/update/', product_update_view, name='product-update'),
+	path('', ArticleListView.as_view(), name='article-list'),
+	path('<int:id>/', ArticleDetailView.as_view(), name='article-detail'),
+	path('create/', ArticleCreateView.as_view(), name='article_create'),
+	path('<int:id>/update/', ArticleUpdateView.as_view(), name='article-update'),
+	path('<int:id>/delete/', ArticleDeleteView.as_view(), name='article-delete'),
+
 ]
-
-
