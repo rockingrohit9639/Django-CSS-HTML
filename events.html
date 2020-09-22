@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+bouncy
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <style>
+            *{margin:0; padding:0;}
+           
+            div{
+                height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#000;
+            }
+           
+            div ul{display:flex; border-bottom:10px solid #fff;}
+           
+            div ul li{ width:50px; height:50px;
+            margin:0 10px;
+            background:#000;
+            list-style:none;
+            border-radius:50px;
+            animation:bouncy 1s linear infinite;
+           
+            }
+           
+            @keyframes bouncy{
+                0%{transform:translateY(0);}
+                50%{transform:translateY(-150px);}
+                100%{transform:translateY(0);}
+            }
+           
+            ul li:nth-child(1){
+                animation-delay:0.2s;
+                background-color:#B07311;
+            }
+           
+            ul li:nth-child(2){
+                animation-delay:0.6s;
+                background-color:#3483EF;
+                }
+               
+            ul li:nth-child(3){
+                animation-delay:0.4s;
+                background-color:#8C3306;
+                }
+               
+            ul li:nth-child(4){
+                animation-delay:0.8s;
+                background-color:#A409C0;
+               
+                }
+               
+            ul li:nth-child(5){
+                animation-delay:0.5s;
+                background-color:pink;
+                }
+               
+               
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </body>
+</html>
+
+
+
+Show original message
+
+
+
+
+
+{% endblock %}
